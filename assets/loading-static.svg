@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" fill="none">
+    <rect x="194" y="30" width="32" height="90" rx="16" fill="#fff" transform="rotate(0 210 210)"/>
+    <rect x="194" y="30" width="32" height="90" rx="16" fill="#ddd" transform="rotate(30 210 210)"/>
+    <rect x="194" y="30" width="32" height="90" rx="16" fill="#bbb" transform="rotate(60 210 210)"/>
+    <rect x="194" y="30" width="32" height="90" rx="16" fill="#999" transform="rotate(90 210 210)"/>
+    <rect x="194" y="30" width="32" height="90" rx="16" fill="#888" transform="rotate(120 210 210)"/>
+    <rect x="194" y="30" width="32" height="90" rx="16" fill="#777" transform="rotate(150 210 210)"/>
+    <rect x="194" y="30" width="32" height="90" rx="16" fill="#666" transform="rotate(180 210 210)"/>
+    <rect x="194" y="30" width="32" height="90" rx="16" fill="#555" transform="rotate(210 210 210)"/>
+    <rect x="194" y="30" width="32" height="90" rx="16" fill="#444" transform="rotate(240 210 210)"/>
+    <rect x="194" y="30" width="32" height="90" rx="16" fill="#333" transform="rotate(270 210 210)"/>
+    <rect x="194" y="30" width="32" height="90" rx="16" fill="#222" transform="rotate(300 210 210)"/>
+    <rect x="194" y="30" width="32" height="90" rx="16" fill="#111" transform="rotate(330 210 210)"/>
+</svg>
