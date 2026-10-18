@@ -174,7 +174,23 @@ section { scroll-margin-top: 90px; }
 .work-item summary::-webkit-details-marker { display: none; }
 .work-arrow { flex-shrink: 0; }
 .work-item[open] .work-arrow { transform: rotate(90deg); }
-.project-note { padding: 0 0 28px; font-size: 18px; line-height: 1.6; }
+/* The project slides use the same peach canvas as the reference. */
+.project-slide { padding: 28px; margin: 8px 0 32px; border: 1px solid currentColor; border-radius: 24px; background: var(--peach); }
+.project-description { max-width: 80ch; margin-bottom: 28px; font-size: 17px; line-height: 1.7; }
+.project-gallery { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 16px; scroll-snap-type: x mandatory; }
+.project-gallery:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.project-gallery figure { flex: 1 0 0; min-width: 0; scroll-snap-align: start; }
+.project-gallery a { display: block; }
+.project-gallery img { width: 100%; height: auto; border: 1px solid #0002; }
+.project-gallery a:focus-visible { outline-offset: -3px; }
+.project-gallery figcaption { padding-top: 10px; font-size: 13px; line-height: 1.5; }
+.gallery-website figure { max-width: 1000px; }
+.gallery-admin figure { flex: 0 0 85%; }
+.gallery-art figure { flex: 0 0 auto; }
+.gallery-art img { width: auto; max-width: none; height: 560px; border: 0; background: transparent; }
+.gallery-admin, .gallery-art { scrollbar-width: auto; scrollbar-color: var(--black) var(--peach); }
+.visit-website { display: block; width: fit-content; margin: 12px 0 0 auto; padding: 12px 20px; border: 1px solid currentColor; font-size: 16px; }
+.visit-website:hover { background: var(--black); color: var(--peach); }
 
 .about { position: relative; min-height: calc(100svh - 78px); padding: 35px 5% 0; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr); align-items: center; gap: 40px; }
 .about-text { position: relative; z-index: 2; padding-bottom: 60px; }
@@ -232,7 +248,11 @@ section { scroll-margin-top: 90px; }
     .intro-star-pink { bottom: 15%; left: 70%; }
     .works { padding: 90px 6% 60px; }
     .work-item summary { min-height: 95px; font-size: 22px; }
-    .project-note { font-size: 16px; }
+    .project-slide { padding: 20px; border-radius: 18px; }
+    .project-description { font-size: 16px; }
+    .gallery-admin figure { flex-basis: 90%; min-width: 0; }
+    .gallery-art figure { flex-basis: auto; min-width: 0; }
+    .gallery-art img { height: 420px; }
     .about { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 35px 6% 0; }
     .about-text { padding-bottom: 30px; }
     .about-image { width: 80%; margin: 0 auto; }
