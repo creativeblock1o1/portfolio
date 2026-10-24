@@ -6,6 +6,9 @@ contactForm.addEventListener('submit', async (event) => {
     if (submitButton.disabled || !contactForm.reportValidity()) return;
 
     const originalText = submitButton.textContent;
+    const status = contactForm.querySelector('.contact-status');
+    status.textContent = 'Sending your message…';
+    contactForm.setAttribute('aria-busy', 'true');
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 30000);
     submitButton.disabled = true;
@@ -24,11 +27,14 @@ contactForm.addEventListener('submit', async (event) => {
             throw new Error('Submission not confirmed');
         }
         contactForm.reset();
+        status.textContent = 'Your message has been sent.';
         window.alert('Your message has been sent.');
     } catch {
+        status.textContent = 'Sending could not be confirmed. Your text has been kept.';
         window.alert('We could not confirm that your message was sent. Your text has been kept. Please try again or email dmoze1257@gmail.com.');
     } finally {
         clearTimeout(timeout);
+        contactForm.removeAttribute('aria-busy');
         submitButton.disabled = false;
         submitButton.textContent = originalText;
     }

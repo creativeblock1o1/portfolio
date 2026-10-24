@@ -354,3 +354,7 @@ body { overflow-wrap: break-word; }
 
 /* CONTACT SENDING STATE */
 .footer-submit:disabled { opacity: 0.6; cursor: wait; }
+
+/* FORM FEEDBACK */
+.contact-status { font-size: 14px; line-height: 1.5; margin-top: 12px; }
+.contact-status:empty { display: none; }
