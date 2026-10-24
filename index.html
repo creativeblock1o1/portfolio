@@ -9,17 +9,20 @@
     <title>The Ongoing Draft</title>
     <link rel="icon" type="image/png" href="photos /favicon.png">
 
-    <!-- Google Fonts: Anton and Inter -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="My first portfolio.css">
+    <script src="contact.js" defer></script>
 </head>
 
 <body>
+    <a class="skip-link" href="#home">Skip to content</a>
 
-    <section class="loading-screen" id="loadingScreen" aria-label="Welcome">
-        <div class="loader-static" aria-hidden="true">
+    <!-- PRELOADER -->
+    <section class="loading-screen" id="loadingScreen">
+        <div class="loader-static">
             <img src="assets/loading-static.svg" alt="">
         </div>
 
@@ -29,21 +32,27 @@
         </div>
     </section>
 
+        <!-- NAVIGATION -->
         <header class="navbar">
-            <nav aria-label="Main navigation">
+            <a class="navbar-logo" href="#home">
+                <img src="photos /favicon.png" alt="Diya — Home">
+            </a>
+            <nav>
                 <a href="#home">Home</a>
                 <a href="#work">Work</a>
                 <a href="#about">About</a>
+                <a href="#contact">Contact</a>
             </nav>
         </header>
 
     <main>
-    <!-- HERO SECTION -->
+    
     <div class="page page-light">
+    <!-- HOME -->
     <section class="hero" id="home">
 
         <div class="hero-title">
-            <h1>The Ongoing Draft</h1>
+            <h1>THE WHY BEHIND IT.</h1>
         </div>
         <div class="hero-subtitle">
             <h2>(so-called Portfolio)</h2>
@@ -53,8 +62,9 @@
     </div>
 
 
-    <!-- INTRODUCTION -->
+    
     <div class="page page-dark">
+    <!-- INTRO -->
     <section class="intro">
 
         <h2 class="intro-hi">HI</h2>
@@ -62,8 +72,8 @@
         <div class="intro-image">
         
             <img src="photos /lizard weaving main.png" alt="A green lizard waving">
-            <span class="star star-orange intro-star-orange" aria-hidden="true">✳</span>
-            <span class="star star-pink intro-star-pink" aria-hidden="true">✳</span>
+
+
         </div>
 
 
@@ -75,103 +85,109 @@
     </div>
 
 
-    <!-- MY WORKS -->
+    
     <div class="page page-light">
+    <!-- WORK -->
     <section class="works" id="work">
 
         <h2 class="section-title">My Works</h2>
 
         <div class="work-list">
-            <details class="work-item" id="project-1">
-                <summary><span id="project-title-1">1) Tiesverse Foundation Website</span><span class="work-arrow" aria-hidden="true">↗</span></summary>
-                <article class="project-slide project-slide-website" aria-labelledby="project-title-1">
+            <div class="work-item" id="project-1">
+                <a class="work-toggle work-open" href="#project-1"><span id="project-title-1">1) Tiesverse Foundation Website</span><span class="work-arrow">↗</span></a>
+                <a class="work-toggle work-close" href="#work"><span>1) Tiesverse Foundation Website</span><span class="work-arrow">↗</span></a>
+                <article class="project-slide project-slide-website">
                     <p class="project-description">A collaborative website project for Tiesverse Foundation, developed alongside my teammates. I contributed to the website’s visual direction and interface design, refining the user experience through iterative improvements and helping shape how the organisation presents itself digitally.</p>
-                    <div class="project-gallery gallery-website" role="region" aria-label="Tiesverse Foundation Website images" tabindex="0">
-                        <figure>
-                            <a href="photos /main pg ties.png" target="_blank" rel="noopener noreferrer" aria-label="View full-size image: Tiesverse Foundation website homepage">
-                                <img src="photos /main pg ties.png" alt="Tiesverse Foundation website homepage" loading="lazy">
+                    <div tabindex="0" class="project-gallery gallery-website">
+                        <div class="gallery-figure">
+                            <a href="photos /main pg ties.png" target="_blank" rel="noopener noreferrer">
+                                <img src="photos /main pg ties.png" alt="Tiesverse Foundation website homepage">
                             </a>
-                            <figcaption>Tiesverse Foundation website homepage</figcaption>
-                        </figure>
+                            <p class="gallery-caption">Tiesverse Foundation website homepage</p>
+                        </div>
                     </div>
-                    <a class="visit-website" href="https://www.tiesverse.com/" target="_blank" rel="noopener noreferrer">Visit Website <span aria-hidden="true">↗</span></a>
+                    <a class="visit-website" href="https://www.tiesverse.com/" target="_blank" rel="noopener noreferrer">Visit Website <span>↗</span></a>
                 </article>
-            </details>
-            <details class="work-item" id="project-2">
-                <summary><span id="project-title-2">2) Tiesverse Admin Panel</span><span class="work-arrow" aria-hidden="true">↗</span></summary>
-                <article class="project-slide project-slide-admin" aria-labelledby="project-title-2">
+            </div>
+            <div class="work-item" id="project-2">
+                <a class="work-toggle work-open" href="#project-2"><span id="project-title-2">2) Tiesverse Admin Panel</span><span class="work-arrow">↗</span></a>
+                <a class="work-toggle work-close" href="#work"><span>2) Tiesverse Admin Panel</span><span class="work-arrow">↗</span></a>
+                <article class="project-slide project-slide-admin" >
                     <p class="project-description">Alongside the main website, I collaborated with my teammates on the design of Tiesverse Foundation’s internal administrative panel and Ties Mail, an email-like communication portal. The admin panel is designed to simplify website content management and organisational updates without requiring changes to the underlying code, while Ties Mail provides a dedicated platform for internal communication. Due to the sensitive nature of the information handled by these systems, only selected interface screens are showcased here.</p>
-                    <div class="project-gallery gallery-admin" role="region" aria-label="Tiesverse Admin Panel images" tabindex="0">
-                        <figure>
-                            <a href="photos /login admin.png" target="_blank" rel="noopener noreferrer" aria-label="View full-size image: Ties HQ sign-in interface">
-                                <img src="photos /login admin.png" alt="Ties HQ sign-in interface" loading="lazy">
+                    <div tabindex="0" class="project-gallery gallery-admin">
+                        <div class="gallery-figure">
+                            <a href="photos /login admin.png"  target="_blank" rel="noopener noreferrer">
+                                <img src="photos /login admin.png" alt="Ties HQ sign-in interface" >
                             </a>
-                            <figcaption>Ties HQ sign-in interface</figcaption>
-                        </figure>
-                        <figure>
-                            <a href="photos /ties admin.png" target="_blank" rel="noopener noreferrer" aria-label="View full-size image: Ties HQ content management dashboard">
-                                <img src="photos /ties admin.png" alt="Ties HQ content management dashboard" loading="lazy">
+                            <p class="gallery-caption">Ties HQ sign-in interface</p>
+                        </div>
+                        <div class="gallery-figure">
+                            <a href="photos /ties admin.png"  target="_blank" rel="noopener noreferrer">
+                                <img src="photos /ties admin.png" alt="Ties HQ content management dashboard" >
                             </a>
-                            <figcaption>Ties HQ content management dashboard</figcaption>
-                        </figure>
-                        <figure>
-                            <a href="photos /mail ties .png" target="_blank" rel="noopener noreferrer" aria-label="View full-size image: Ties Mail workspace dashboard">
-                                <img src="photos /mail ties .png" alt="Ties Mail workspace dashboard" loading="lazy">
+                            <p class="gallery-caption">Ties HQ content management dashboard</p>
+                        </div>
+                        <div class="gallery-figure">
+                            <a href="photos /mail ties .png"  target="_blank" rel="noopener noreferrer">
+                                <img src="photos /mail ties .png" alt="Ties Mail workspace dashboard" >
                             </a>
-                            <figcaption>Ties Mail workspace dashboard</figcaption>
-                        </figure>
+                            <p class="gallery-caption">Ties Mail workspace dashboard</p>
+                        </div>
                     </div>
                 </article>
-            </details>
-            <details class="work-item" id="project-3">
-                <summary><span id="project-title-3">3) A Bit of This, A Bit of That</span><span class="work-arrow" aria-hidden="true">↗</span></summary>
-                <article class="project-slide project-slide-art" aria-labelledby="project-title-3">
+            </div>
+            <div class="work-item" id="project-3">
+                <a class="work-toggle work-open" href="#project-3"><span id="project-title-3"> 3) A Bit of This, A Bit of That</span><span class="work-arrow">↗</span></a>
+                <a class="work-toggle work-close" href="#work"><span> 3) A Bit of This, A Bit of That</span><span class="work-arrow">↗</span></a>
+                <article class="project-slide project-slide-art">
                     <p class="project-description">A little bit of everything I’ve made so far, from illustrations and graphic design to pipe-cleaner flowers and LinkedIn banners. I’ve made a lot more, but I’ve picked out a few favourites to put here. No particular theme, just things I’ve made, ideas I’ve explored, and random creative rabbit holes I’ve fallen into. Scroll sideways to see them all!</p>
-                    <div class="project-gallery gallery-art" role="region" aria-label="A Bit of This, A Bit of That images" tabindex="0">
-                        <figure>
-                            <a href="photos /indian traditional Artboard 1.png" target="_blank" rel="noopener noreferrer" aria-label="View full-size image: Indian classical dance illustration">
-                                <img src="photos /indian traditional Artboard 1.png" alt="Indian classical dance illustration" loading="lazy">
+                    <div tabindex="0" class="project-gallery gallery-art"  >
+                        <div class="gallery-figure">
+                            <a href="photos /indian traditional Artboard 1.png" target="_blank" rel="noopener noreferrer">
+                                <img src="photos /indian traditional Artboard 1.png" alt="Indian classical dance illustration" >
                             </a>
-                        </figure>
-                        <figure>
-                            <a href="photos /Insights 2 - TIES.png" target="_blank" rel="noopener noreferrer" aria-label="View full-size image: Web Slings, Marvel Wins editorial poster">
-                                <img src="photos /Insights 2 - TIES.png" alt="Web Slings, Marvel Wins editorial poster" loading="lazy">
+                        </div>
+                        <div class="gallery-figure">
+                            <a href="photos /Insights 2 - TIES.png"  target="_blank" rel="noopener noreferrer">
+                                <img src="photos /Insights 2 - TIES.png" alt="Web Slings, Marvel Wins editorial poster" >
                             </a>
-                        </figure>
-                        <figure>
-                            <a href="photos /eyes drugsArtboard 5 copy.png" target="_blank" rel="noopener noreferrer" aria-label="View full-size image: Dark red illustrated sword and dragon artwork">
-                                <img src="photos /eyes drugsArtboard 5 copy.png" alt="Dark red illustrated sword and dragon artwork" loading="lazy">
+                        </div>
+                        <div class="gallery-figure">
+                            <a href="photos /eyes drugsArtboard 5 copy.png"  target="_blank" rel="noopener noreferrer">
+                                <img src="photos /eyes drugsArtboard 5 copy.png" alt="Dark red illustrated sword and dragon artwork" >
                             </a>
-                        </figure>
-                        <figure>
-                            <a href="photos /3.png" target="_blank" rel="noopener noreferrer" aria-label="View full-size image: Tiesverse editorial banner design">
-                                <img src="photos /3.png" alt="Tiesverse editorial banner design" loading="lazy">
+                        </div>
+                        <div class="gallery-figure">
+                            <a href="photos /3.png"  target="_blank" rel="noopener noreferrer">
+                                <img src="photos /3.png" alt="Tiesverse editorial banner design" >
                             </a>
-                        </figure>
-                        <figure>
-                            <a href="photos /11.png" target="_blank" rel="noopener noreferrer" aria-label="View full-size image: Tiesverse Article 142 editorial banner">
-                                <img src="photos /11.png" alt="Tiesverse Article 142 editorial banner" loading="lazy">
+                        </div>
+                        <div class="gallery-figure">
+                            <a href="photos /11.png"  target="_blank" rel="noopener noreferrer">
+                                <img src="photos /11.png" alt="Tiesverse Article 142 editorial banner" >
                             </a>
-                        </figure>
-                        <figure>
-                            <a href="photos /Portfolio Ties .png" target="_blank" rel="noopener noreferrer" aria-label="View full-size image: Tiesverse law and justice editorial banner">
-                                <img src="photos /Portfolio Ties .png" alt="Tiesverse law and justice editorial banner" loading="lazy">
+                        </div>
+                        <div class="gallery-figure">
+                            <a href="photos /Portfolio Ties .png"  target="_blank" rel="noopener noreferrer">
+                                <img src="photos /Portfolio Ties .png" alt="Tiesverse law and justice editorial banner" >
                             </a>
-                        </figure>
-                        <figure>
-                            <a href="photos /IMG_7364.jpg" target="_blank" rel="noopener noreferrer" aria-label="View full-size image: Handmade pipe-cleaner flowers">
-                                <img src="photos /IMG_7364.jpg" alt="Handmade pipe-cleaner flowers" loading="lazy">
+                        </div>
+                        <div class="gallery-figure">
+                            <a href="photos /IMG_7364.jpg" target="_blank" rel="noopener noreferrer">
+                                <img src="photos /IMG_7364.jpg" alt="Handmade pipe-cleaner flowers" >
                             </a>
-                        </figure>
+                        </div>
                     </div>
                 </article>
-            </details>
+            </div>
         </div>
     </section>
     </div>
 
-    <!-- ABOUT -->
+    
     <div class="page page-light">
+
+    <!-- ABOUT ME -->
     <section class="about" id="about">
 
         <div class="about-text">
@@ -179,13 +195,13 @@
             <h2 class="section-title">About</h2>
 
             <div class="about-subheading">
-                <h3>An Introduction No One<br>Asked For</h3>
+                <h3>An Introduction No One<span class="line-break"></span>Asked For</h3>
                 <img src="photos /fog laptop.png" alt="A frog working on a laptop">
             </div>
 
             <p>
                 Oh, hi! I'm Diya, a User Experience Design student who likes figuring out why things work, what makes them interesting, and how they could be better. I dabble in graphic design, illustration, web design, and pretty much anything that catches my curiosity. I'm still figuring out where I fit in the design world, so for now, I'm learning, experimenting, making things, and occasionally picking up hobbies I absolutely did not need. One thing at a time? Never heard of it.
-<br>
+<span class="line-break"></span>
 Need to get a project done on time? <a class="contact-link" href="#contact">Contact me</a>. I like a good deadline, a new challenge, and figuring things out even if Google, 10 people, and 37 tabs are involved.
             </p>
 
@@ -196,13 +212,14 @@ Need to get a project done on time? <a class="contact-link" href="#contact">Cont
     </div>
 
 
-    <!-- SKILLS -->
+    
     <div class="page page-light">
+    <!-- SKILLS -->
     <section class="skills" id="skills">
         <h2 class="small-display-title">Skills</h2>
         <div class="outlined-box">
-            <h3>Digital Skills*</h3>
-            <ul class="digital-skills" aria-label="Digital skills">
+            <h3>Digital Skills</h3>
+            <ul class="digital-skills">
                 <li><img class="skill-icon" src="photos /illustrator.png" alt=""><span>Illustrator</span></li>
                 <li><img class="skill-icon" src="photos /photoshop.png" alt=""><span>Photoshop</span></li>
                 <li><img class="skill-icon" src="photos /figma.png" alt=""><span>Figma</span></li>
@@ -215,33 +232,45 @@ Need to get a project done on time? <a class="contact-link" href="#contact">Cont
                 <li>Event coordination</li>
             </ul>
         </div>
-        <p class="skills-note">* Learning phase still figuring it out!</p>
+        
     </section>
     </div>
     </main>
 
-    <!-- FOOTER -->
+    
+    <!-- CONTACT / FOOTER -->
     <footer class="footer" id="contact">
-        <img class="footer-bow" src="photos /bow.png" alt="">
         <div class="footer-inner">
-            <nav class="footer-socials" aria-label="Contact Diya">
-                <a href="https://www.linkedin.com/in/diya-moze-580a0a361/" target="_blank" rel="noopener noreferrer" aria-label="Diya on LinkedIn" title="LinkedIn">
-                    <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="3" fill="#0A66C2"/><path fill="white" d="M7 12h4v14H7zm2-6a2.3 2.3 0 1 0 0 4.6A2.3 2.3 0 0 0 9 6zm5 6h4v2c1-1.6 2.4-2.3 4-2.3 4 0 5 2.5 5 6V26h-4v-7.5c0-2-.4-3.3-2.3-3.3-2 0-2.7 1.5-2.7 3.3V26h-4z"/></svg>
-                </a>
-                <a href="https://www.instagram.com/creative_block1o1/" target="_blank" rel="noopener noreferrer" aria-label="Diya on Instagram, creative_block1o1" title="Instagram: @creative_block1o1">
-                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="7"/><circle cx="16" cy="16" r="6"/><circle cx="24" cy="8" r="1.5" fill="currentColor" stroke="none"/></svg>
-                </a>
-                <a href="tel:+918799921801" aria-label="Call Diya at +91 8799921801" title="+91 8799921801">
-                    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M7 3 3 6c-2 2 1 10 7 16s14 9 16 7l4-4-8-6-3 4c-3-1-8-6-9-9l4-3z"/></svg>
-                </a>
-                <a href="mailto:dmoze1257@gmail.com" aria-label="Email Diya at dmoze1257@gmail.com" title="dmoze1257@gmail.com">
-                    <svg viewBox="0 0 40 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="3" width="38" height="26" rx="1"/><path d="m2 4 18 15L38 4M2 28l12-12m24 12L26 16"/></svg>
-                </a>
-            </nav>
-            <div class="footer-title">
-                <h2>The Ongoing Draft</h2>
+            <div class="footer-top">
+                <div class="footer-contact-heading">
+                    <h3>Contact Me</h3>
+                    <img src="photos /call img.png" alt="">
+                </div>
+                <nav class="footer-socials">
+                    <a class="footer-logo" href="#home"><img src="photos /favicon.png" alt="Diya — Home"></a>
+                    <a href="https://www.linkedin.com/in/diya-moze-580a0a361/" title="LinkedIn" target="_blank" rel="noopener noreferrer"><img src="assets/linkedin.svg" alt="LinkedIn"></a>
+                    <a href="https://www.instagram.com/creative_block1o1/" title="Instagram" target="_blank" rel="noopener noreferrer"><img src="assets/instagram.svg" alt="Instagram"></a>
+                    <a href="tel:+918799921801" title="+91 8799921801"><img src="assets/phone.svg" alt="Call Diya"></a>
+                    <a href="mailto:dmoze1257@gmail.com" title="dmoze1257@gmail.com"><img src="assets/email.svg" alt="Email Diya"></a>
+                </nav>
             </div>
+            <form class="footer-fields" action="https://formsubmit.co/dmoze1257@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New portfolio enquiry for Diya">
+                <div class="footer-details">
+                    <label for="contact-name">Name</label>
+                    <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100" required>
+                    <label for="contact-email">Email Id</label>
+                    <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+                </div>
+                <div class="footer-message">
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" name="message" rows="5" maxlength="5000" required></textarea>
+                    <button class="footer-submit" type="submit">Send message ↗</button>
+                </div>
+            </form>
+            <div class="footer-title"><h2>Creative Block 101</h2></div>
         </div>
+        <p class="footer-disclaimer">All third-party trademarks, logos, and brand names are the property of their respective owners.</p>
     </footer>
 
 </body>

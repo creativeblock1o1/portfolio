@@ -1,54 +1,17 @@
-
-/* Page reset: removes default spacing and includes borders in element sizes. */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/* Shared colours and fonts: values reused throughout the website. */
-:root {
-    --peach: #FFF0E5;
-    --black: #000000;
-    --orange: #FF7B35;
-    --pink: #E6005C;
-    --white: #FFFFFF;
-
-    --heading-font: "Anton", sans-serif;
-    --body-font: "Inter", sans-serif;
-}
-
-/* Font helper classes: Anton for headings and Inter for body text. */
-.font-anton {
-    font-family: "Anton", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.font-inter {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-
-
-/* Whole page: smooth anchor scrolling, default font, colours, and horizontal overflow. */
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background-color: var(--black);
-    color: var(--black);
-    font-family: var(--body-font);
+    background-color: #000000;
+    color: #000000;
+    font-family: "Inter", sans-serif;
     font-weight: 400;
-    overflow-x: hidden;
 }
-
-/* Opening screen: full-height black background and centred static loader. */
+/* PRELOADER */
 .loading-screen {
-    min-height: 100vh;
-    min-height: 100svh;
+    min-height: 768.0px;
     padding: 48px 20px;
     display: flex;
     flex-direction: column;
@@ -57,60 +20,58 @@ body {
     background-color: #000000;
 
 }
-
-/* Loader image: controls its size and the gap before the welcome text. */
 .loader-static {
-    width: 60%;
-    max-width: 320px;
-    aspect-ratio: 1;
+    width: 320px;
+    height: 320px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 36px;
 }
-
 .loader-static img {
     width: 100%;
     height: 100%;
     display: block;
     object-fit: contain;
+
+    animation-name: loader-rotate;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
-/* Opening message: white text, alignment, line spacing, and responsive font size. */
+@keyframes loader-rotate {
+    from { transform: rotate(0deg); }
+to { transform: rotate(360deg); }
+}
 .loading-text {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0;
     text-align: center;
-    color: #ffffff;
+    color: #fff0e5;
     font-family: "Anton", sans-serif;
     font-weight: 400;
     font-style: normal;
     line-height: 1.15;
     letter-spacing: 0;
 }
-
 .loading-text span {
     display: block;
-    font-size: clamp(26px, 5vw, 104px);
+    font-size: 68.3px;
     text-transform: none;
 }
-
-/* Shared elements: links, keyboard focus outlines, images, and main background. */
+/* LINKS AND IMAGES */
 a { color: inherit; text-decoration: none; }
-a:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
+a:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
 img { max-width: 100%; display: block; }
-main { background-color: var(--peach); }
-/* Section colours stay independent of the shared navigation. */
-/* Section themes: peach sections with black text and black sections with white text. */
-.page-light { --page-background: var(--peach); color: var(--black); background: var(--page-background); }
-.page-dark { --page-background: var(--black); color: var(--white); background: var(--page-background); }
-/* Anchor offsets: leaves space above linked sections for the sticky navigation. */
+main { background-color: #FFF0E5; }
+/* PAGE COLOURS */
+.page-light { color: #000000; background-color: #FFF0E5; }
+.page-dark { color: #fff0e5; background-color: #000000; }
 section { scroll-margin-top: 90px; }
-
-/* Navigation stays available after the opening screen. */
-/* Navigation bar: sticky position, height, centred links, peach background, and divider. */
+/* NAVIGATION */
 .navbar {
     position: sticky;
     top: 0;
@@ -121,211 +82,275 @@ section { scroll-margin-top: 90px; }
     justify-content: center;
     padding: 0 3%;
     border-bottom: 1px solid currentColor;
-    background: var(--peach);
-    color: var(--black);
+    background-color: #FFF0E5;
+    color: #000000;
     scroll-margin-top: 0;
 }
-/* Navigation links: horizontal spacing, font size, and hover underline. */
+.navbar-logo { position: absolute; left: 22px; display: flex; align-items: center; }
+.navbar-logo img { width: 44px; height: 60px; object-fit: contain; }
 .navbar nav { display: flex; justify-content: center; gap: 45px; }
 .navbar a { font-size: 28px; font-weight: 400; }
 .navbar a:hover { text-decoration: underline; text-underline-offset: 8px; }
-
-/* Home section: space around The Ongoing Draft and its subtitle. */
+/* HERO */
 .hero {
     scroll-margin-top: 78px;
-    min-height: calc(100svh - 78px);
+    min-height: 690.0px;
     padding: 90px 6% 70px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-/* Home heading and subtitle: font sizes, alignment, and spacing. */
-.hero-title { isolation: isolate; position: relative; width: fit-content; max-width: 100%; }
-.hero-title h1 { position: relative; z-index: 1; font-family: var(--heading-font); font-size: clamp(48px, 10.6vw, 155px); font-weight: 400; line-height: 1.15; }
-.hero-subtitle { position: relative; isolation: isolate; margin: 40px 0 0 auto; text-align: right; max-width: 100%; }
-.hero-subtitle h2 { position: relative; z-index: 1; font-family: var(--heading-font); font-size: clamp(26px, 5.6vw, 80px); font-weight: 400; line-height: 1.2; }
-/* Decorative SVG underline: width and alignment wherever the scribble is used. */
-.scribble { width: 80%; max-width: 450px; margin-left: auto; }
-.scribble svg { display: block; width: 100%; height: auto; }
-
-
-
-/* Star decorations: shape, size, positioning, and non-clickable behaviour. */
-.star {
-    position: absolute;
-    display: block;
-    width: clamp(65px, 10vw, 140px);
-    aspect-ratio: 1;
-    background: currentColor;
-    font-size: 0;
-    clip-path: polygon(50% 0%,56% 30%,75% 7%,67% 35%,93% 25%,73% 44%,100% 50%,73% 56%,93% 75%,67% 65%,75% 93%,56% 70%,50% 100%,44% 70%,25% 93%,33% 65%,7% 75%,27% 56%,0% 50%,27% 44%,7% 25%,33% 35%,25% 7%,44% 30%);
-    pointer-events: none;
-}
-/* Star colours and layers: orange behind content, pink in front. */
-.star-orange { color: var(--orange); z-index: 0; }
-.star-pink { color: var(--pink); z-index: 2; }
-/* Home star positions: applies if stars are included in the home section. */
-.hero-star-pink { top: 0; left: 0; width: clamp(55px, 8vw, 110px); transform: translate(-40%, -20%); z-index: 0; }
-.hero-star-orange { bottom: 0; right: 0; width: clamp(55px, 8vw, 110px); transform: translate(15%, 35%); z-index: 2; }
-
-/* Introduction section: flex layout for HI, the lizard image, and I’m Diya. */
+.hero-title { position: relative; width: fit-content; max-width: 100%; }
+.hero-title h1 { position: relative; z-index: 1; font-family: "Anton", sans-serif; font-size: 144.796px; font-weight: 400; line-height: 1.15; }
+.hero-subtitle { position: relative; margin: 40px 0 0 auto; text-align: right; max-width: 100%; }
+.hero-subtitle h2 { position: relative; z-index: 1; font-family: "Anton", sans-serif; font-size: 76.496px; font-weight: 400; line-height: 1.2; }
+/* INTRO */
 .intro {
     position: relative;
-    min-height: calc(100svh - 78px);
-    padding: 45px 6% 0;
+    height: 690.0px;
     display: flex;
     align-items: flex-end;
-    gap: 25px;
+    justify-content: space-between;
+    padding: 30px 6%;
 }
-/* Introduction text and image: heading sizes, image width, and column spacing. */
-.intro-hi { position: absolute; top: 30px; left: 6%; font-family: var(--heading-font); font-size: clamp(110px, 18vw, 250px); font-weight: 400; line-height: 1; z-index: 2; }
-.intro-image { position: relative; isolation: isolate; flex: 1 1 0; min-width: 0; margin-top: 110px; }
-.intro-image img { position: relative; z-index: 1; width: 100%; max-width: 650px; }
-.intro-name { flex: 1 1 0; padding-bottom: 35px; z-index: 2; min-width: 0; }
-.intro-name h2 { font-family: var(--heading-font); font-size: clamp(65px, 12.5vw, 180px); font-weight: 400; line-height: 1.15; }
-.intro-name .scribble { width: 100%; }
-/* Lizard stars: orange at the upper left and pink at the lower right. */
-.intro-star-orange { top: 22%; left: 15%; width: 30%; max-width: 150px; }
-.intro-star-pink { bottom: 0; right: 15%; width: 25%; max-width: 125px; }
-
-/* My Works section: outer spacing, main heading, and project list. */
-.works { min-height: calc(100svh - 78px); padding: 140px 2.5% 80px; }
-.section-title { font-family: var(--heading-font); font-size: clamp(65px, 11vw, 145px); font-weight: 400; line-height: 1.2; }
+.intro-hi { position: absolute; top: 20px; left: 6%; font-family: "Anton", sans-serif; font-size: 245.76px; font-weight: 400; line-height: 1; z-index: 2; }
+.intro-image { position: absolute; left: 6%; bottom: 0; width: 54%; height: 92%; margin: 0; }
+.intro-image img { position: absolute; bottom: 0; left: 0; width: 130%; height: 130%; max-width: none; max-height: none; object-fit: contain; object-position: left bottom; }
+.intro-name { position: absolute; right: 1%; bottom: 7%; padding: 0; z-index: 2; }
+.intro-name h2 { font-family: "Anton", sans-serif; font-size: 215.04px; font-weight: 400; line-height: 1.1; white-space: nowrap; }
+/* WORK */
+.works { min-height: 690.0px; padding: 140px 2.5% 80px; }
+.section-title { font-family: "Anton", sans-serif; font-size: 145.0px; font-weight: 400; line-height: 1.2; }
 .work-list { margin-top: 24px; }
-.work-item { border-bottom: 1px solid var(--black); }
-/* Expandable project titles: clickable row, wrapping, and default marker removal. */
-.work-item summary { min-height: 108px; padding: 20px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: clamp(22px, 3.4vw, 43px); cursor: pointer; list-style: none; }
-.work-item summary::-webkit-details-marker { display: none; }
-.work-item summary > span:first-child { min-width: 0; overflow-wrap: anywhere; }
-/* Project arrows: keeps a square space for each arrow and rotates it when open. */
+.work-item { border-bottom: 1px solid #000000; }
+.work-item .work-toggle { min-height: 108px; padding: 20px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 43.0px; cursor: pointer; list-style: none; }
+.work-item .work-toggle > span:first-child { min-width: 0; overflow-wrap: anywhere; }
 .work-arrow { flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; width: 1.5em; height: 1.5em; }
-.work-item[open] .work-arrow { transform: rotate(90deg); }
-
-/* Expanded project content: card border, background, spacing, and description. */
-.project-slide { padding: 28px; margin: 8px 0 32px; border: 1px solid currentColor; border-radius: 24px; background: var(--peach); }
+.work-item:target .work-arrow { transform: rotate(90deg); }
+.project-slide { padding: 28px; margin: 8px 0 32px; border: 1px solid currentColor; border-radius: 24px; background-color: #FFF0E5; }
 .project-description { max-width: 80ch; margin-bottom: 28px; font-size: 17px; line-height: 1.7; }
-/* Image galleries: horizontal scrolling, image sizing, captions, and keyboard focus. */
 .project-gallery { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 16px; scroll-snap-type: x mandatory; }
 .project-gallery:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
-.project-gallery figure { flex: 1 0 0; min-width: 0; scroll-snap-align: start; }
+.project-gallery .gallery-figure { flex: 1 0 0; min-width: 0; scroll-snap-align: start; }
 .project-gallery a { display: block; }
 .project-gallery img { width: 100%; height: auto; border: 1px solid #0002; }
 .project-gallery a:focus-visible { outline-offset: -3px; }
-.project-gallery figcaption { padding-top: 10px; font-size: 13px; line-height: 1.5; }
-/* Individual galleries: website image width, admin slide width, and large artwork images. */
-.gallery-website figure { max-width: 1000px; }
-.gallery-admin figure { flex: 0 0 85%; }
-.gallery-art figure { flex: 0 0 auto; }
-.gallery-art img { width: auto; max-width: none; height: 560px; border: 0; background: transparent; }
-.gallery-admin, .gallery-art { scrollbar-width: auto; scrollbar-color: var(--black) var(--peach); }
-/* Visit Website button: right alignment, border, padding, and hover colours. */
+.project-gallery .gallery-caption { padding-top: 10px; font-size: 13px; line-height: 1.5; }
+.gallery-website .gallery-figure { max-width: 1000px; }
+.gallery-admin .gallery-figure { flex: 0 0 85%; }
+.gallery-art .gallery-figure { flex: 0 0 auto; }
+.gallery-art img { width: auto; max-width: none; height: 560px; border: 0; background-color: transparent; }
+.gallery-admin, .gallery-art { scrollbar-width: auto; scrollbar-color: #000000 #FFF0E5; }
 .visit-website { display: block; width: fit-content; margin: 12px 0 0 auto; padding: 12px 20px; border: 1px solid currentColor; font-size: 16px; }
-.visit-website:hover { background: var(--black); color: var(--peach); }
-
-/* About section: grid-pattern artwork background, text layout, and top/bottom black lines. */
+.visit-website:hover { background-color: #000000; color: #FFF0E5; }
+/* ABOUT ME */
 .about {
     position: relative;
-    min-height: max(650px, calc(100svh - 78px));
+    min-height: 690.0px;
     padding: 45px 5% 70px;
     display: flex;
     align-items: center;
-    background-color: var(--peach);
+    background-color: #FFF0E5;
     background-image: url("photos /about me pg.png");
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     background-size: cover;
     background-position: right bottom;
     background-repeat: no-repeat;
-    color: var(--black);
+    color: #000000;
 }
-/* About text: left-column width, introduction heading, frog image, and paragraph sizing. */
 .about-text { width: 57%; min-width: 0; position: relative; padding-bottom: 0; }
 .about-subheading { display: flex; align-items: center; gap: 20px; margin: 15px 0; }
-.about-subheading h3 { font-family: var(--heading-font); font-size: clamp(35px, 4vw, 55px); font-weight: 400; }
+.about-subheading h3 { font-family: "Anton", sans-serif; font-size: 54.64px; font-weight: 400; }
 .about-subheading img { width: 70px; height: 70px; object-fit: contain; }
-.about-text p { font-size: clamp(15px, 1.4vw, 18px); line-height: 1.65; }
-
-/* Skills section: spacing, outlined box, headings, software logos, and skill lists. */
-.skills { min-height: calc(100svh - 78px); padding: 45px 6% 35px; }
-.small-display-title { margin-bottom: 22px; font-family: var(--heading-font); font-size: clamp(32px, 4vw, 48px); font-weight: 400; }
-.outlined-box { padding: 28px; border: 2px solid var(--black); border-radius: 12px; }
-.outlined-box h3 { font-size: clamp(25px, 3.7vw, 40px); font-weight: 400; }
-.digital-skills { display: flex; flex-wrap: wrap; gap: 25px; margin: 16px 0 36px; list-style: none; }
+.about-text p { font-size: 18.0px; line-height: 1.65; }
+/* SKILLS */
+.skills { min-height: 690.0px; padding: 45px 6% 35px; }
+.small-display-title { margin-bottom: 22px; font-family: "Anton", sans-serif; font-size: 48.0px; font-weight: 400; }
+.outlined-box { padding: 28px; border: 2px solid #000000; border-radius: 12px; }
+.outlined-box h3 { font-size: 40.0px; font-weight: 400; }
+.digital-skills { display: flex;  gap: 25px; margin: 16px 0 36px; list-style: none; }
 .digital-skills li { display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 13px; }
 .skill-icon { display: block; width: 68px; height: 68px; object-fit: contain; border-radius: 13px; }
-.human-skills { margin: 8px 0 0 28px; font-size: clamp(18px, 2.5vw, 27px); line-height: 1.5; }
-.skills-note { margin-top: 12px; text-align: right; font-size: 14px; }
-
-/* Contact footer: black background, white frame, social icons, title, and decorative bow. */
-.footer { position: relative; min-height: 70svh; padding: 140px 3% 0; color: white; background: black; display: flex; flex-direction: column; }
-.footer-inner { flex: 1; min-height: 50svh; padding: 45px 2% 0; border: 1px solid white; border-bottom: 0; border-radius: 9px 9px 0 0; display: flex; flex-direction: column; justify-content: space-between; }
-.footer-socials { display: flex; justify-content: flex-end; align-items: center; gap: 18px; }
-.footer-socials a { display: flex; align-items: center; justify-content: center; width: 38px; height: 44px; }
-.footer-socials svg { display: block; width: 32px; height: 32px; }
-.footer-socials a:last-child svg { width: 40px; }
+.human-skills { margin: 8px 0 0 28px; font-size: 27.0px; line-height: 1.5; }
+/* CONTACT */
+.footer { padding: 70px 3% 0; color: #fff0e5; background-color: black; display: flex; flex-direction: column; overflow: hidden; }
+.footer-inner { position: relative; padding: 45px 4% 0; border: 2px solid #fff0e5; border-bottom: 0; border-radius: 14px 14px 0 0; display: flex; flex-direction: column; overflow: hidden; }
+.footer-top { display: flex; justify-content: space-between; align-items: center; gap: 30px; margin-bottom: 34px; }
+.footer-contact-heading { display: flex; align-items: center; gap: 20px; }
+.footer-contact-heading h3 { font-family: "Anton", sans-serif; font-size: 58px; font-weight: 400; white-space: nowrap; }
+.footer-contact-heading img { width: 90px; height: 105px; object-fit: contain; }
+.footer-socials { display: flex; align-items: center; justify-content: flex-end; gap: 20px; }
+.footer-socials a { display: flex; align-items: center; justify-content: center; width: 48px; height: 52px; }
+.footer-socials img { width: 48px; height: 48px; object-fit: contain; }
+.footer-socials .footer-logo img { width: 36px; height: 50px; }
+.footer-socials a:last-child { width: 65px; }
+.footer-socials a:last-child img { width: 65px; }
 .footer-socials a:hover { opacity: 0.75; }
-.footer-title { padding-top: 100px; }
-.footer-title h2 { font-family: var(--heading-font); font-size: clamp(42px, 10.2vw, 155px); font-weight: 400; line-height: 1.1; }
-.footer-bow { position: absolute; top: 90px; left: 0; width: clamp(95px, 14vw, 180px); z-index: 2; pointer-events: none; }
 
-/* Phone layouts: overrides below apply only when the screen is 600px wide or narrower. */
+/* CONTACT — TABLET */
+@media (min-width: 601px) and (max-width: 1025px) {
+.footer { padding: 45px 3% 0; }
+.footer-inner { padding: 30px 4% 0; }
+.footer-top { gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
+.footer-contact-heading { gap: 12px; }
+.footer-contact-heading h3 { font-size: 44px; }
+.footer-contact-heading img { width: 65px; height: 78px; }
+.footer-socials { gap: 12px; flex-wrap: wrap; }
+.footer-socials a { width: 36px; height: 44px; }
+.footer-socials img { width: 36px; height: 36px; }
+.footer-socials .footer-logo img { width: 28px; height: 40px; }
+.footer-socials a:last-child, .footer-socials a:last-child img { width: 45px; }
+}
+
+/* CONTACT — PHONE */
 @media (max-width: 600px) {
-    /* Phone navigation and Home: smaller bar, links, heading sizes, and anchor offsets. */
-    section { scroll-margin-top: 75px; }
-    .navbar { height: 65px; }
-    .navbar nav { gap: 18px; }
-    .navbar nav a { font-size: 18px; }
-    .hero { scroll-margin-top: 65px; min-height: calc(100svh - 65px); padding: 65px 7%; }
-    .hero-title h1 { font-size: 12vw; }
-    .hero-subtitle h2 { font-size: 6.5vw; }
-    /* Phone introduction: stacks the lizard and name vertically. */
-    .intro { min-height: calc(100svh - 65px); padding: 30px 6%; flex-direction: column; justify-content: space-between; gap: 10px; }
-    .intro-hi { font-size: 110px; top: 15px; }
-    .intro-image { flex: none; width: 85%; margin: 85px auto 0; }
-    .intro-name { flex: none; width: 100%; text-align: right; padding-bottom: 0; }
-    .intro-name h2 { font-size: 20vw; }
-    .intro-name .scribble { width: 70%; }
-    /* Phone projects: tighter card spacing and large sideways-scrolling images. */
-    .works { padding: 90px 6% 60px; }
-    .work-item summary { min-height: 95px; font-size: 22px; }
-    .project-slide { padding: 20px; border-radius: 18px; }
-    .project-description { font-size: 16px; }
-    .gallery-admin figure { flex-basis: 90%; min-width: 0; }
-    .gallery-art figure { flex-basis: auto; min-width: 0; }
-    .gallery-art img { height: 420px; }
-    /* Phone About: full-width text with space reserved for the artwork underneath. */
-    .about {
-        min-height: 0;
-        padding: 35px 6% 440px;
-        background-size: auto 420px;
-        background-position: right bottom;
-    }
-    .about-text { width: 100%; }
-    /* Phone skills: smaller logo sizes, box padding, and gaps. */
-    .skills { padding: 40px 6%; }
-    .outlined-box { padding: 20px; }
-    .digital-skills { gap: 16px; }
-    .skill-icon { width: 55px; height: 55px; }
-    /* Phone footer: adjusts height, contact icon spacing, title size, and bow position. */
-    .footer { min-height: 70svh; padding-top: 100px; }
-    .footer-inner { min-height: 55svh; padding-top: 70px; }
-    .footer-socials { gap: 12px; }
-    .footer-title h2 { font-size: 10vw; }
-    .footer-bow { top: 60px; }
+.footer { padding: 28px 4% 0; }
+.footer-inner { padding: 24px 6% 0; border-radius: 14px 14px 0 0; }
+.footer-top { flex-direction: column; align-items: flex-start; gap: 18px; margin-bottom: 28px; }
+.footer-contact-heading { gap: 12px; max-width: 100%; }
+.footer-contact-heading h3 { font-size: clamp(30px, 8vw, 46px); }
+.footer-contact-heading img { width: 55px; height: 65px; }
+.footer-socials { justify-content: flex-start; flex-wrap: wrap; gap: clamp(10px, 3vw, 18px); max-width: 100%; }
+.footer-socials a { width: 34px; height: 44px; }
+.footer-socials img { width: 32px; height: 32px; }
+.footer-socials .footer-logo img { width: 27px; height: 38px; }
+.footer-socials a:last-child, .footer-socials a:last-child img { width: 43px; }
 }
-/* Reduced motion: disables smooth scrolling when requested in device accessibility settings. */
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-
-/* Contact me link: underline and spacing below the link text. */
+/* CONTACT LINK */
 .about-text .contact-link { text-decoration: underline; text-underline-offset: 4px; }
+/* LINE BREAK */
+.line-break { display: block; }
+/* PROJECT PANELS */
+.work-item { scroll-margin-top: 100px; }
+.work-item > .work-close, .work-item > .project-slide { display: none; }
+.work-item:target > .work-open { display: none; }
+.work-item:target > .work-close { display: flex; }
+.work-item:target > .project-slide { display: block; }
+/* LAPTOP WIDTH */
+.loading-screen, .navbar, main { width: 100%; }
+body { overflow-wrap: break-word; }
 
-/* Tablet About layout: puts the artwork below the text on screens 601–900px wide. */
-@media (min-width: 601px) and (max-width: 900px) {
-    .about {
-        min-height: 0;
-        padding: 35px 6% 440px;
-        background-size: auto 420px;
-        background-position: right bottom;
-    }
-    .about-text { width: 100%; }
+/* CONTACT FIELDS */
+.footer-fields { display: flex; justify-content: space-between; gap: 12%; margin: 0; }
+.footer-details { width: 42%; min-width: 0; display: flex; flex-direction: column; }
+.footer-message { width: 47%; min-width: 0; display: flex; flex-direction: column; }
+.footer-fields label { margin-bottom: 14px; font-size: 28px; }
+.footer-fields input, .footer-fields textarea { width: 100%; padding: 8px 12px; border: 2px solid #fff0e5; border-radius: 13px; background-color: transparent; color: #fff0e5; caret-color: #fff0e5; font: inherit; font-size: 22px; }
+.footer-fields input { height: 46px; margin-bottom: 24px; }
+.footer-fields textarea { height: 145px; resize: none; }
+.footer-fields input:focus, .footer-fields textarea:focus { background-color: transparent; outline: none; border-color: #fff0e5; }
+.footer-fields input:autofill, .footer-fields textarea:autofill { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: #fff0e5; }
+.footer-submit { align-self: flex-end; margin-top: 22px; padding: 3px 9px; border: 2px solid #fff0e5; border-radius: 12px; font-size: 24px; line-height: 1.1; cursor: default; }
+.footer-title { padding-top: 55px; margin: 0 -3.5% -18px; }
+.footer-title h2 { font-family: "Anton", sans-serif; font-size: 12.5vw; font-weight: 400; line-height: 1.05; white-space: nowrap; }
+.footer-disclaimer { margin: 0; padding: 16px 4%; color: #fff0e5; font-size: 12px; line-height: 1.5; text-align: center; }
+
+/* CONTACT FIELDS — TABLET */
+@media (min-width: 601px) and (max-width: 1025px) {
+    .footer-fields { gap: 7%; }
+    .footer-details { width: 43%; }
+    .footer-message { width: 50%; }
+    .footer-fields label { font-size: 23px; }
+    .footer-fields input, .footer-fields textarea { font-size: 19px; }
+    .footer-submit { font-size: 21px; }
+    .footer-title { padding-top: 40px; margin-bottom: -10px; }
+    .footer-title h2 { font-size: 12.7vw; }
 }
+
+/* CONTACT FIELDS — PHONE */
+@media (max-width: 600px) {
+    .footer-fields { flex-direction: column; gap: 0; }
+    .footer-details, .footer-message { width: 100%; }
+    .footer-fields label { font-size: 20px; margin-bottom: 10px; }
+    .footer-fields input, .footer-fields textarea { font-size: 18px; padding: 10px; border-radius: 10px; }
+    .footer-fields input { height: 44px; margin-bottom: 22px; }
+    .footer-fields textarea { height: 150px; }
+    .footer-submit { margin-top: 16px; font-size: 20px; }
+    .footer-title { padding-top: 35px; margin: 0 -3% -5px; }
+    .footer-title h2 { font-size: 11.8vw; }
+}
+
+/* RESPONSIVE FOUNDATIONS */
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 100; padding: 12px 18px; background: #fff0e5; color: black; transform: translateY(-160%); }
+.skip-link:focus { transform: translateY(0); }
+.loading-screen { min-height: 100svh; }
+.loader-static { width: min(65vw, 320px); height: auto; aspect-ratio: 1; }
+.loading-text span { font-size: clamp(28px, 5vw, 68px); }
+.hero-title h1 { font-size: clamp(44px, 10.6vw, 145px); overflow-wrap: anywhere; }
+.hero-subtitle h2 { font-size: clamp(26px, 5.6vw, 77px); }
+.intro { height: min(690px, 85svh); min-height: 480px; overflow: hidden; }
+.intro-hi { font-size: clamp(100px, 18vw, 246px); }
+.intro-name h2 { font-size: clamp(76px, 15.5vw, 215px); }
+.section-title { font-size: clamp(52px, 10.6vw, 145px); }
+.work-item .work-toggle { font-size: clamp(22px, 3.15vw, 43px); }
+.about-subheading h3 { font-size: clamp(28px, 4vw, 55px); }
+.digital-skills { flex-wrap: wrap; }
+.project-gallery { overscroll-behavior-x: contain; }
+.footer-fields > input[type="hidden"] { display: none; }
+.footer-submit { color: #fff0e5; background: transparent; font-family: inherit; cursor: pointer; min-height: 44px; }
+.footer-submit:hover { color: black; background: #fff0e5; }
+.footer-submit:focus-visible, .footer-fields input:focus-visible, .footer-fields textarea:focus-visible { outline: 2px solid #fff0e5; outline-offset: 4px; }
+.navbar nav a { min-height: 44px; display: flex; align-items: center; }
+
+/* TABLETS */
+@media (max-width: 1025px) {
+    .navbar nav { gap: 26px; }
+    .navbar a { font-size: 22px; }
+    .hero { min-height: 600px; padding: 65px 6%; }
+    .works { min-height: 0; padding: 80px 5% 60px; }
+    .work-item .work-toggle { min-height: 90px; }
+    .project-slide { padding: 22px; }
+    .about { min-height: 0; padding: 45px 6% 470px; background-size: auto 450px; background-position: right bottom; align-items: flex-start; }
+    .about-text { width: 100%; }
+    .about-text p { font-size: 17px; }
+    .skills { min-height: 0; padding: 45px 6%; }
+    .human-skills { font-size: 23px; }
+    .gallery-art img { height: 420px; }
+}
+
+/* PHONES */
+@media (max-width: 600px) {
+    .navbar { height: auto; min-height: 72px; padding: 10px 4%; justify-content: space-between; gap: 10px; }
+    .navbar-logo { position: static; flex-shrink: 0; }
+    .navbar-logo img { width: 30px; height: 42px; }
+    .navbar nav { gap: clamp(8px, 2.6vw, 16px); flex-wrap: wrap; justify-content: flex-end; }
+    .navbar nav a { font-size: clamp(14px, 3.7vw, 18px); }
+    section, .hero, .work-item { scroll-margin-top: 85px; }
+    .loading-screen { padding: 40px 6%; }
+    .hero { min-height: 520px; min-height: calc(85svh - 72px); padding: 55px 6%; }
+    .hero-subtitle { margin-top: 30px; }
+    .intro { min-height: 490px; height: 75svh; max-height: 650px; padding: 24px 6%; }
+    .intro-hi { top: 24px; left: 6%; font-size: 100px; }
+    .intro-image { left: 3%; width: 90%; height: 72%; }
+    .intro-image img { width: 100%; height: 100%; }
+    .intro-name { bottom: 7%; right: 4%; }
+    .intro-name h2 { font-size: clamp(58px, 17vw, 100px); text-shadow: 0 2px 12px black; }
+    .works { padding: 55px 5% 40px; }
+    .work-item .work-toggle { min-height: 88px; gap: 8px; padding: 18px 0; }
+    .work-arrow { width: 1.1em; }
+    .project-slide { padding: 16px; border-radius: 16px; }
+    .project-description { font-size: 16px; line-height: 1.65; margin-bottom: 20px; }
+    .project-gallery { gap: 14px; }
+    .gallery-admin .gallery-figure { flex-basis: 95%; }
+    .gallery-art img { height: 310px; }
+    .about { padding: 35px 6% 370px; background-size: auto 350px; }
+    .about-subheading { align-items: flex-start; gap: 12px; }
+    .about-subheading h3 { font-size: clamp(26px, 6.5vw, 36px); }
+    .about-subheading img { width: 50px; height: 50px; }
+    .about-text p { font-size: 16px; }
+    .skills { padding: 35px 6%; }
+    .outlined-box { padding: 20px; }
+    .outlined-box h3 { font-size: 28px; }
+    .digital-skills { gap: 20px; }
+    .digital-skills li { width: 76px; }
+    .human-skills { font-size: 20px; margin-left: 22px; }
+}
+
+/* Respect reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+    .loader-static img { animation: none; }
+}
+
+/* CONTACT SENDING STATE */
+.footer-submit:disabled { opacity: 0.6; cursor: wait; }
