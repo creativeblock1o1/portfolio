@@ -1,6 +1,14 @@
 const contactForm = document.querySelector('.footer-fields');
 const submitButton = contactForm.querySelector('button[type="submit"]');
 
+const loadingScreen = document.querySelector('#loadingScreen');
+if (loadingScreen) {
+    window.setTimeout(() => {
+        loadingScreen.classList.add('is-dismissing');
+        window.setTimeout(() => loadingScreen.remove(), 500);
+    }, 5500);
+}
+
 contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     if (submitButton.disabled || !contactForm.reportValidity()) return;
@@ -28,10 +36,8 @@ contactForm.addEventListener('submit', async (event) => {
         }
         contactForm.reset();
         status.textContent = 'Your message has been sent.';
-        window.alert('Your message has been sent.');
     } catch {
         status.textContent = 'Sending could not be confirmed. Your text has been kept.';
-        window.alert('We could not confirm that your message was sent. Your text has been kept. Please try again or email dmoze1257@gmail.com.');
     } finally {
         clearTimeout(timeout);
         contactForm.removeAttribute('aria-busy');

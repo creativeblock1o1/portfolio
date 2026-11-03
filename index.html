@@ -13,7 +13,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="My first portfolio.css">
     <script src="contact.js" defer></script>
 </head>
@@ -22,7 +22,7 @@
     <a class="skip-link" href="#home">Skip to content</a>
 
     <!-- PRELOADER -->
-    <section class="loading-screen" id="loadingScreen">
+    <section class="loading-screen" id="loadingScreen" aria-label="Creative block introduction">
         <div class="loader-static">
             <img src="assets/loading-static.svg" alt="">
         </div>
@@ -36,9 +36,9 @@
         <!-- NAVIGATION -->
         <header class="navbar">
             <a class="navbar-logo" href="#home">
-                <img src="assets/optimized/favicon.png" alt="Diya — Home" width="175" height="240" loading="lazy" decoding="async">
+                <img src="assets/optimized/favicon.png" alt="Diya — Home" width="175" height="240" decoding="async">
             </a>
-            <nav>
+            <nav aria-label="Main navigation">
                 <a href="#home">Home</a>
                 <a href="#work">Work</a>
                 <a href="#about">About</a>
@@ -102,7 +102,7 @@
                     <div tabindex="0" class="project-gallery gallery-website">
                         <div class="gallery-figure">
                             <a href="photos /main pg ties.png" target="_blank" rel="noopener noreferrer">
-                                <img src="assets/optimized/main pg ties.png" alt="Tiesverse Foundation website homepage" width="1600" height="900" loading="lazy" decoding="async">
+                            <img src="assets/optimized/main pg ties.jpg" alt="Tiesverse Foundation website homepage" width="1600" height="900" loading="lazy" decoding="async">
                             </a>
                             <p class="gallery-caption">Tiesverse Foundation website homepage</p>
                         </div>
@@ -150,7 +150,7 @@
                         </div>
                         <div class="gallery-figure">
                             <a href="photos /Insights 2 - TIES.png"  target="_blank" rel="noopener noreferrer">
-                                <img src="assets/optimized/Insights 2 - TIES.png" alt="Web Slings, Marvel Wins editorial poster" width="1280" height="1600" loading="lazy" decoding="async">
+                                <img src="assets/optimized/Insights 2 - TIES.jpg" alt="Web Slings, Marvel Wins editorial poster" width="960" height="1200" loading="lazy" decoding="async">
                             </a>
                         </div>
                         <div class="gallery-figure">
@@ -159,24 +159,58 @@
                             </a>
                         </div>
                         <div class="gallery-figure">
-                            <a href="photos /3.png"  target="_blank" rel="noopener noreferrer">
-                                <img src="assets/optimized/3.jpg" alt="Tiesverse editorial banner design" width="1600" height="900" loading="lazy" decoding="async">
-                            </a>
-                        </div>
-                        <div class="gallery-figure">
-                            <a href="photos /11.png"  target="_blank" rel="noopener noreferrer">
-                                <img src="assets/optimized/11.jpg" alt="Tiesverse Article 142 editorial banner" width="1600" height="900" loading="lazy" decoding="async">
-                            </a>
-                        </div>
-                        <div class="gallery-figure">
-                            <a href="photos /Portfolio Ties .png"  target="_blank" rel="noopener noreferrer">
-                                <img src="assets/optimized/Portfolio Ties .jpg" alt="Tiesverse law and justice editorial banner" width="1600" height="900" loading="lazy" decoding="async">
-                            </a>
-                        </div>
-                        <div class="gallery-figure">
                             <a href="photos /IMG_7364.jpg" target="_blank" rel="noopener noreferrer">
                                 <img src="assets/optimized/IMG_7364.jpg" alt="Handmade pipe-cleaner flowers" width="1600" height="1200" loading="lazy" decoding="async">
                             </a>
+                        </div>
+                        <div class="gallery-figure">
+                            <a href="assets/optimized/art/IMG_4623 2.jpg" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/optimized/art/IMG_4623 2.jpg" alt="Historic church building with a clock tower among trees" width="1600" height="1200" loading="lazy" decoding="async">
+                            </a>
+                        </div>
+                        <div class="gallery-figure">
+                            <a href="photos /indian traditional Artboard 5.png" target="_blank" rel="noopener noreferrer">
+                                <img src="photos /indian traditional Artboard 5.png" alt="Illustration of a hand with mehndi and bangles holding a string instrument" width="1080" height="1351" loading="lazy" decoding="async">
+                            </a>
+                        </div>
+                        <div class="gallery-figure">
+                            <a href="photos /16.png" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/optimized/art/16.jpg" alt="Editorial graphic asking who decides what India is allowed to see" width="1600" height="900" loading="lazy" decoding="async">
+                            </a>
+                        </div>
+                        <div class="gallery-figure">
+                            <a href="photos /cover 11.5.png" target="_blank" rel="noopener noreferrer">
+                                <img src="photos /cover 11.5.png" alt="Minimal black and white floral line art book cover" width="733" height="1112" loading="lazy" decoding="async">
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="work-item" id="project-4">
+                <a class="work-toggle work-open" href="#project-4"><span id="project-title-4">4) PĀṆINI</span><span class="work-arrow">↗</span></a>
+                <a class="work-toggle work-close" href="#work"><span>4) PĀṆINI</span><span class="work-arrow">↗</span></a>
+                <article class="project-slide project-slide-panini">
+                    <p class="project-description">Pāṇini is a series of articles exploring how ideas, technology, law, and society shape the world around us.</p>
+                    <div class="panini-adhyaya">
+                        <h3>Adhyāya 1</h3>
+                        <div class="panini-articles">
+                            <a class="panini-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7436798419123265536" target="_blank" rel="noopener noreferrer"><img src="assets/optimized/panini/1.jpg" alt="Pāṇini introduction graphic" width="1200" height="1200" loading="lazy" decoding="async"></a>
+                            <a class="panini-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7437138984729911296" target="_blank" rel="noopener noreferrer"><img src="assets/optimized/panini/2.jpg" alt="AI’s Invisible Hand in Politics article graphic" width="1200" height="1200" loading="lazy" decoding="async"></a>
+                            <a class="panini-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7437566968947417088" target="_blank" rel="noopener noreferrer"><img src="assets/optimized/panini/3.jpg" alt="The Next Battle for Power Is Digital article graphic" width="1200" height="1200" loading="lazy" decoding="async"></a>
+                            <a class="panini-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7438254410188857345" target="_blank" rel="noopener noreferrer"><img src="assets/optimized/panini/4.jpg" alt="The Digital Pathogen article graphic" width="1200" height="1200" loading="lazy" decoding="async"></a>
+                            <a class="panini-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7438613300386500610" target="_blank" rel="noopener noreferrer"><img src="assets/optimized/panini/5.jpg" alt="AI Disinformation Exploits Natural Disasters and Emergencies article graphic" width="1200" height="1200" loading="lazy" decoding="async"></a>
+                            <a class="panini-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7437880717734199297" target="_blank" rel="noopener noreferrer"><img src="assets/optimized/panini/8.jpg" alt="From Smart Tools to Social Mirrors article graphic" width="1200" height="675" loading="lazy" decoding="async"></a>
+                            <a class="panini-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7438949092828905472" target="_blank" rel="noopener noreferrer"><img src="assets/optimized/panini/9.jpg" alt="Bharat’s AI Challenge article graphic" width="1200" height="675" loading="lazy" decoding="async"></a>
+                        </div>
+                    </div>
+                    <div class="panini-adhyaya">
+                        <h3>Adhyāya 2</h3>
+                        <div class="panini-articles">
+                            <a class="panini-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7451666926554238976" target="_blank" rel="noopener noreferrer"><img src="assets/optimized/panini/6.jpg" alt="Pāṇini graphic featuring the Supreme Court of India" width="1200" height="1200" loading="lazy" decoding="async"></a>
+                            <a class="panini-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7452034032889909250" target="_blank" rel="noopener noreferrer"><img src="assets/optimized/panini/10.jpg" alt="Beyond the Binary article graphic" width="1200" height="675" loading="lazy" decoding="async"></a>
+                            <a class="panini-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7452410144027627520" target="_blank" rel="noopener noreferrer"><img src="assets/optimized/panini/11.jpg" alt="Liberty Under Law article graphic" width="1200" height="675" loading="lazy" decoding="async"></a>
+                            <a class="panini-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7453490020457365504" target="_blank" rel="noopener noreferrer"><img src="assets/optimized/panini/12.jpg" alt="Drawing the Line article graphic" width="1200" height="675" loading="lazy" decoding="async"></a>
+                            <a class="panini-card" href="https://www.linkedin.com/feed/update/urn:li:activity:7453860521398738945/" target="_blank" rel="noopener noreferrer"><img src="assets/optimized/panini/13.jpg" alt="Rethinking Article 142 article graphic" width="1200" height="675" loading="lazy" decoding="async"></a>
                         </div>
                     </div>
                 </article>
@@ -249,7 +283,7 @@ Need to get a project done on time? <a class="contact-link" href="#contact">Cont
                     <h3>Contact Me</h3>
                     <img src="assets/optimized/call img.png" alt="" width="220" height="240" loading="lazy" decoding="async">
                 </div>
-                <nav class="footer-socials">
+                <nav class="footer-socials" aria-label="Social and contact links">
                     <a class="footer-logo" href="#home"><img src="assets/optimized/favicon.png" alt="Diya — Home" width="175" height="240" loading="lazy" decoding="async"></a>
                     <a href="https://www.linkedin.com/in/diya-moze-580a0a361/" title="LinkedIn" target="_blank" rel="noopener noreferrer"><img src="assets/linkedin.svg" alt="LinkedIn"></a>
                     <a href="https://www.instagram.com/creative_block1o1/" title="Instagram" target="_blank" rel="noopener noreferrer"><img src="assets/instagram.svg" alt="Instagram"></a>

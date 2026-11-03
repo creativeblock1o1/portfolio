@@ -11,15 +11,18 @@ body {
 }
 /* PRELOADER */
 .loading-screen {
-    min-height: 768.0px;
+    min-height: 768px;
     padding: 48px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #000000;
-
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 500ms ease, visibility 500ms ease;
 }
+.loading-screen.is-dismissing { opacity: 0; visibility: hidden; }
 .loader-static {
     width: 320px;
     height: 320px;
@@ -139,10 +142,19 @@ section { scroll-margin-top: 90px; }
 .gallery-website .gallery-figure { max-width: 1000px; }
 .gallery-admin .gallery-figure { flex: 0 0 85%; }
 .gallery-art .gallery-figure { flex: 0 0 auto; }
-.gallery-art img { width: auto; max-width: none; height: 560px; border: 0; background-color: transparent; }
+.gallery-art img { width: auto; max-width: none; height: auto; max-height: 560px; border: 0; background-color: transparent; }
 .gallery-admin, .gallery-art { scrollbar-width: auto; scrollbar-color: #000000 #FFF0E5; }
 .visit-website { display: block; width: fit-content; margin: 12px 0 0 auto; padding: 12px 20px; border: 1px solid currentColor; font-size: 16px; }
 .visit-website:hover { background-color: #000000; color: #FFF0E5; }
+.project-slide-panini { display: flex; flex-direction: column; gap: 32px; border: 0; border-radius: 0; }
+.project-slide-panini > .project-description { margin-bottom: 0; }
+.panini-adhyaya h3 { margin-bottom: 12px; font-family: "Anton", sans-serif; font-size: 32px; font-weight: 400; }
+.panini-adhyaya + .panini-adhyaya { margin-top: 32px; padding-top: 24px; border-top: 1px solid #000; }
+.panini-articles { display: flex; align-items: flex-start; gap: 24px; overflow-x: auto; padding: 0 8px 14px; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: auto; scrollbar-color: #000000 #FFF0E5; }
+.panini-card { display: block; flex: 0 0 auto; width: fit-content; min-width: 0; scroll-snap-align: start; }
+.panini-card img { display: block; width: auto; height: 560px; max-width: none; max-height: none; border: 0; border-radius: 0; object-fit: contain; background: none; }
+.panini-card { transition: transform 180ms ease, filter 180ms ease; }
+.panini-card:hover, .panini-card:focus-visible { position: relative; z-index: 1; transform: scale(1.04); }
 /* ABOUT ME */
 .about {
     position: relative;
@@ -151,7 +163,7 @@ section { scroll-margin-top: 90px; }
     display: flex;
     align-items: center;
     background-color: #FFF0E5;
-    background-image: url("photos /about me pg.png");
+    background-image: url("assets/optimized/about me pg.png");
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     background-size: cover;
@@ -229,6 +241,9 @@ section { scroll-margin-top: 90px; }
 .work-item:target > .project-slide { display: block; }
 /* LAPTOP WIDTH */
 .loading-screen, .navbar, main { width: 100%; }
+.loading-screen { min-height: 100svh; }
+.loader-static { width: min(65vw, 320px); height: auto; aspect-ratio: 1; }
+.loading-text span { font-size: clamp(28px, 5vw, 68px); }
 body { overflow-wrap: break-word; }
 
 /* CONTACT FIELDS */
@@ -274,9 +289,6 @@ body { overflow-wrap: break-word; }
 /* RESPONSIVE FOUNDATIONS */
 .skip-link { position: fixed; top: 8px; left: 8px; z-index: 100; padding: 12px 18px; background: #fff0e5; color: black; transform: translateY(-160%); }
 .skip-link:focus { transform: translateY(0); }
-.loading-screen { min-height: 100svh; }
-.loader-static { width: min(65vw, 320px); height: auto; aspect-ratio: 1; }
-.loading-text span { font-size: clamp(28px, 5vw, 68px); }
 .hero-title h1 { font-size: clamp(44px, 10.6vw, 145px); overflow-wrap: anywhere; }
 .hero-subtitle h2 { font-size: clamp(26px, 5.6vw, 77px); }
 .intro { height: min(690px, 85svh); min-height: 480px; overflow: hidden; }
@@ -301,12 +313,14 @@ body { overflow-wrap: break-word; }
     .works { min-height: 0; padding: 80px 5% 60px; }
     .work-item .work-toggle { min-height: 90px; }
     .project-slide { padding: 22px; }
+    .project-slide-panini { gap: 28px; }
     .about { min-height: 0; padding: 45px 6% 470px; background-size: auto 450px; background-position: right bottom; align-items: flex-start; }
     .about-text { width: 100%; }
     .about-text p { font-size: 17px; }
     .skills { min-height: 0; padding: 45px 6%; }
     .human-skills { font-size: 23px; }
-    .gallery-art img { height: 420px; }
+    .gallery-art img { max-height: 420px; }
+    .panini-card img { height: 420px; }
 }
 
 /* PHONES */
@@ -333,7 +347,8 @@ body { overflow-wrap: break-word; }
     .project-description { font-size: 16px; line-height: 1.65; margin-bottom: 20px; }
     .project-gallery { gap: 14px; }
     .gallery-admin .gallery-figure { flex-basis: 95%; }
-    .gallery-art img { height: 310px; }
+    .gallery-art img { max-height: 310px; }
+    .panini-card img { height: 310px; }
     .about { padding: 35px 6% 370px; background-size: auto 350px; }
     .about-subheading { align-items: flex-start; gap: 12px; }
     .about-subheading h3 { font-size: clamp(26px, 6.5vw, 36px); }
@@ -350,6 +365,7 @@ body { overflow-wrap: break-word; }
 /* Respect reduced-motion preferences. */
 @media (prefers-reduced-motion: reduce) {
     .loader-static img { animation: none; }
+    .panini-card { transition: none; }
 }
 
 /* CONTACT SENDING STATE */
