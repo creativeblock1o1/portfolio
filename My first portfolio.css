@@ -3,8 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html { background-color: #FFF0E5; }
 body {
-    background-color: #000000;
+    background-color: #FFF0E5;
     color: #000000;
     font-family: "Inter", sans-serif;
     font-weight: 400;
@@ -374,3 +375,153 @@ body { overflow-wrap: break-word; }
 /* FORM FEEDBACK */
 .contact-status { font-size: 14px; line-height: 1.5; margin-top: 12px; }
 .contact-status:empty { display: none; }
+
+/* MY WORKS COLLAGE */
+.works {
+    min-height: 0;
+    padding: 0;
+    background: #fff0e5;
+    color: #080707;
+}
+.work-board {
+    position: relative;
+    width: 100%;
+    height: max(100svh, 680px);
+    min-height: 680px;
+    margin: 0;
+    overflow: hidden;
+    background: #fff0e5;
+    isolation: isolate;
+}
+.work-board::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    inset: 2.5% 2.5% 2.5% 18%;
+    border: 0;
+    background: url("photos /pin board.jpg") center / 100% 100% no-repeat;
+    box-shadow: none;
+}
+.work-board-title {
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    width: max-content;
+    z-index: 1;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    font-family: "Anton", sans-serif;
+    font-size: clamp(64px, min(16vw, 17svh), 220px);
+    font-weight: 400;
+    line-height: .9;
+    letter-spacing: -.04em;
+    pointer-events: none;
+}
+.work-sticker {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    filter: drop-shadow(0 11px 8px #2b17132c);
+    transition: transform 220ms ease, filter 220ms ease, opacity 180ms ease;
+}
+.work-sticker:hover, .work-sticker:focus-visible {
+    z-index: 4;
+    filter: drop-shadow(0 18px 12px #2b17134a);
+}
+.work-sticker img { width: 100%; height: 100%; object-fit: cover; }
+.sticker-panini { left: 20%; top: 15%; width: 19%; transform: rotate(-8deg); }
+.sticker-panini:hover, .sticker-panini:focus-visible { transform: rotate(-4deg) scale(1.07); }
+.sticker-website { left: 59%; top: 14%; width: 33%; transform: rotate(8deg); }
+.sticker-website img, .sticker-admin img { aspect-ratio: 16 / 9; object-fit: cover; }
+.sticker-website:hover, .sticker-website:focus-visible { transform: rotate(3deg) scale(1.045); }
+.sticker-admin { left: 25%; top: 57%; width: 33%; transform: rotate(-11deg); }
+.sticker-admin:hover, .sticker-admin:focus-visible { transform: rotate(-6deg) scale(1.045); }
+.sticker-art {
+    left: 73%; top: 59%; width: 16%; aspect-ratio: .8 / 1;
+    display: grid; place-items: center; padding: 12px;
+    background: #f3eee3; transform: rotate(-8deg);
+}
+.sticker-art::after { content: ""; position: absolute; top: -8px; left: 23%; width: 48%; height: 17px; background: #ded1c5; opacity: .8; transform: rotate(-4deg); }
+.sticker-art:hover, .sticker-art:focus-visible { transform: rotate(-3deg) scale(1.06); }
+.art-sticker-label { font-family: "Anton", sans-serif; font-size: clamp(17px, 2.1vw, 29px); line-height: 1.05; text-align: center; }
+.pushpin { position: absolute; z-index: 2; top: -11px; left: 50%; width: 34px; height: 28px; background: url("assets/optimized/pin-full.png") no-repeat center / contain; filter: drop-shadow(2px 4px 3px #0005); transform: translateX(-50%); pointer-events: none; }
+.work-detail {
+    position: absolute;
+    z-index: 6;
+    inset: 0;
+    display: none;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    gap: clamp(14px, 2vw, 28px);
+    overflow: auto;
+    padding: 58px clamp(76px, 8vw, 112px) 32px clamp(22px, 4vw, 48px);
+    background: #FFF0E5;
+}
+.work-detail.is-active { display: grid; }
+.work-board:has(.work-detail.is-active) > .work-sticker { opacity: .12; }
+.work-controls { position: fixed; z-index: 20; top: 50%; right: clamp(14px, 3vw, 40px); display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 6px; background: transparent; transform: translateY(-50%); }
+.work-controls a { display: grid; place-items: center; width: 48px; height: 48px; color: #000; font-family: Arial, sans-serif; font-size: 27px; font-weight: 400; line-height: 1; transition: opacity 150ms ease; }
+.work-controls a:hover, .work-controls a:focus-visible { color: #000; opacity: .62; }
+.detail-media { min-width: 0; width: 100%; }
+.detail-media img { width: 100%; max-height: 54vh; object-fit: contain; background: transparent; border: 0; }
+.detail-copy { max-width: 80ch; margin-bottom: clamp(8px, 1.4vw, 18px); }
+.detail-kicker { margin-bottom: 12px; font-size: 11px; font-weight: 700; letter-spacing: .14em; }
+.detail-copy h3 { margin-bottom: 12px; font-family: "Anton", sans-serif; font-size: clamp(34px, 4.4vw, 62px); font-weight: 400; line-height: 1; }
+.detail-copy > p:not(.detail-kicker) { font-size: clamp(13px, 1.1vw, 15px); line-height: 1.55; }
+.detail-link { display: inline-block; margin-top: 22px; padding-bottom: 4px; border-bottom: 1px solid currentColor; font-size: 15px; }
+.admin-media { display: flex; align-items: center; gap: 6px; overflow-x: auto; overflow-y: hidden; width: 100%; height: min(50vh, 560px); padding: 8px 4px 16px; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: auto; scrollbar-color: #5b5a58 #eeecea; }
+.admin-media img { flex: 0 0 auto; width: auto; height: 100%; max-height: none; aspect-ratio: 1600 / 901; object-fit: contain; background: transparent; border: 0; scroll-snap-align: start; }
+.work-detail.detail-panini { padding-right: clamp(66px, 4vw, 90px); }
+.detail-panini { grid-template-columns: minmax(0, 1fr); align-items: start; }
+.detail-panini .detail-copy { max-width: none; }
+.panini-description { width: 100%; max-width: none; padding: 0; border: 0; background: transparent; }
+.panini-description p { margin: 0 0 10px; font-size: clamp(13px, 1.1vw, 15px); line-height: 1.55; }
+.panini-description p:last-child { margin-bottom: 0; }
+.panini-read-more { margin-top: 4px; }
+.panini-read-more summary, .panini-read-less { width: fit-content; cursor: pointer; list-style: none; color: inherit; background: transparent; border: 0; font: inherit; font-size: 12px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.panini-read-more summary::-webkit-details-marker { display: none; }
+.panini-read-more summary::marker { content: ""; }
+.panini-read-more[open] > summary { display: none; }
+.panini-read-less { display: none; margin-top: 2px; }
+.panini-read-more[open] .panini-read-less { display: block; }
+.detail-chapters { min-width: 0; }
+.detail-chapter + .detail-chapter { margin-top: 20px; padding-top: 15px; border-top: 1px solid #191512; }
+.detail-chapter h4 { margin-bottom: 10px; font-family: "Anton", sans-serif; font-size: 24px; font-weight: 400; }
+.detail-panini-gallery { display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(10px, 1vw, 18px); overflow-x: auto; overflow-y: hidden; padding: 8px 6px 16px; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; border: 0; outline: 0; box-shadow: none; }
+.detail-panini-gallery a { position: relative; display: block; flex: 0 0 auto; width: fit-content; height: min(58vh, 620px); scroll-snap-align: start; border: 0; outline: 0; box-shadow: none; }
+.detail-panini-gallery img { display: block; width: auto; height: 100%; max-width: none; object-fit: contain; background: transparent; border: 0; outline: 0; box-shadow: none; transition: transform 180ms ease; }
+.detail-panini-gallery a:hover img, .detail-panini-gallery a:focus-visible img { transform: scale(1.045); }
+.detail-art { grid-template-columns: minmax(0, 1fr); align-content: start; }
+.detail-art-gallery { display: flex; align-items: center; flex-wrap: nowrap; gap: clamp(14px, 2.2vw, 30px); overflow-x: auto; overflow-y: hidden; width: 100%; height: min(48vh, 540px); min-width: 0; max-height: none; padding: 8px 6px 18px; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: auto; scrollbar-color: #5b5a58 #eeecea; }
+.detail-art-gallery img { flex: 0 0 auto; width: auto; height: 100%; max-width: none; object-fit: contain; scroll-snap-align: start; }
+
+@media (max-width: 700px) {
+    .works { padding: 0; }
+    .work-board { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 14px; height: auto; min-height: 100svh; padding: 62px 16px 20px; overflow: hidden; }
+    .work-board::before { inset: 58px 8px 8px; border-width: 10px; }
+    .work-board-title { inset: 10px 0 auto; display: block; width: 100%; writing-mode: initial; transform: none; text-align: center; font-size: clamp(43px, 13vw, 76px); line-height: .95; }
+    .work-sticker { position: relative; inset: auto; width: auto; align-self: center; justify-self: center; max-width: 100%; }
+    .sticker-panini { width: 70%; grid-column: 1; grid-row: 1; margin-top: 5px; }
+    .sticker-website { width: 100%; grid-column: 2; grid-row: 1; margin-top: 8px; }
+    .sticker-admin { width: 100%; grid-column: 1; grid-row: 2; }
+    .sticker-art { width: 66%; grid-column: 2; grid-row: 2; }
+    .pushpin { width: 28px; height: 24px; top: -9px; }
+    .art-sticker-label { font-size: clamp(16px, 5vw, 25px); }
+    .work-detail { position: absolute; inset: 0; min-height: 100%; grid-template-columns: 1fr; align-content: start; gap: 16px; padding: 60px 66px 24px 18px; }
+    .detail-media img { max-height: 38vh; }
+    .work-controls { right: 8px; padding: 5px 3px; }
+    .work-controls a { width: 38px; height: 40px; font-size: 24px; }
+    .admin-media { height: 38vh; min-height: 220px; }
+    .admin-media img { height: auto; width: 84vw; flex-basis: 84vw; }
+    .detail-copy h3 { font-size: clamp(34px, 9vw, 46px); }
+    .work-detail.detail-panini { padding-right: 66px; }
+    .detail-panini { grid-template-columns: 1fr; }
+    .panini-description { padding: 0; }
+    .panini-description p { font-size: 13px; line-height: 1.5; }
+    .detail-panini-gallery a { height: min(54vh, 76vw); max-height: 460px; }
+    .detail-art { grid-template-columns: 1fr; }
+    .detail-art-gallery { display: flex; width: 100%; height: 30vh; max-height: none; overflow-x: auto; overflow-y: hidden; }
+    .detail-art-gallery img { flex: 0 0 auto; width: auto; height: 100%; max-width: 75vw; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .work-sticker, .detail-panini-gallery img { transition: none; }
+}
