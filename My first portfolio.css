@@ -476,13 +476,6 @@ body { overflow-wrap: break-word; }
 .panini-description { width: 100%; max-width: none; padding: 0; border: 0; background: transparent; }
 .panini-description p { margin: 0 0 10px; font-size: clamp(13px, 1.1vw, 15px); line-height: 1.55; }
 .panini-description p:last-child { margin-bottom: 0; }
-.panini-read-more { margin-top: 4px; }
-.panini-read-more summary, .panini-read-less { width: fit-content; cursor: pointer; list-style: none; color: inherit; background: transparent; border: 0; font: inherit; font-size: 12px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-.panini-read-more summary::-webkit-details-marker { display: none; }
-.panini-read-more summary::marker { content: ""; }
-.panini-read-more[open] > summary { display: none; }
-.panini-read-less { display: none; margin-top: 2px; }
-.panini-read-more[open] .panini-read-less { display: block; }
 .detail-chapters { min-width: 0; }
 .detail-chapter + .detail-chapter { margin-top: 20px; padding-top: 15px; border-top: 1px solid #191512; }
 .detail-chapter h4 { margin-bottom: 10px; font-family: "Anton", sans-serif; font-size: 24px; font-weight: 400; }

@@ -6,12 +6,6 @@ if (loadingScreen) {
     }, 5500);
 }
 
-document.querySelectorAll('.panini-read-less').forEach((button) => {
-    button.addEventListener('click', () => {
-        button.closest('details')?.removeAttribute('open');
-    });
-});
-
 const workDetails = [...document.querySelectorAll('.work-detail')];
 const setActiveWorkDetail = (hash) => {
     const activeDetail = hash.startsWith('#detail-')
