@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="My first portfolio.css">
+    <link rel="stylesheet" href="My first portfolio.css?v=20261110-6">
     <script src="contact.js" defer></script>
 </head>
 
@@ -91,12 +91,14 @@
     <!-- WORK -->
     <section class="works" id="work" aria-labelledby="work-title">
         <div class="work-board">
-            <h2 class="work-board-title" id="work-title">MY WORKS</h2>
-
-            <a class="work-sticker sticker-panini" href="#detail-panini" aria-label="Explore Pāṇini"><span class="pushpin" aria-hidden="true"></span><img src="photos /paninilogo.png" alt="Pāṇini by Ties logo" width="1200" height="1200"></a>
-            <a class="work-sticker sticker-website" href="#detail-website" aria-label="Explore the Tiesverse Foundation website"><span class="pushpin" aria-hidden="true"></span><img src="assets/optimized/main pg ties.jpg" alt="Tiesverse Foundation website homepage" width="1600" height="900"></a>
-            <a class="work-sticker sticker-admin" href="#detail-admin" aria-label="Explore the Tiesverse admin panel"><span class="pushpin" aria-hidden="true"></span><img src="assets/optimized/ties admin.png" alt="Ties HQ content management dashboard" width="1600" height="901"></a>
-            <a class="work-sticker sticker-art" href="#detail-art" aria-label="Explore A Bit of This, A Bit of That"><span class="pushpin" aria-hidden="true"></span><span class="art-sticker-label">A bit of this,<br>a bit of that</span></a>
+            <div class="work-canvas">
+                <h2 class="visually-hidden" id="work-title">My Work</h2>
+                <img class="work-layout-image" src="photos /106.png?v=20261110-1" alt="" aria-hidden="true" width="6000" height="3375">
+                <a class="work-sticker sticker-panini" href="#detail-panini" aria-label="Open Pāṇini project"><img class="panini-folder-image" src="photos /panini%20file.png" alt="" aria-hidden="true"><span>Pāṇini</span></a>
+                <a class="work-sticker sticker-website" href="#detail-website" aria-label="Open Tiesverse Foundation Website project"><img class="folder-icon" src="photos /file.png" alt="" aria-hidden="true"><span>Tiesverse Foundation Website</span></a>
+                <a class="work-sticker sticker-admin" href="#detail-admin" aria-label="Open Tiesverse Admin Panel project"><img class="folder-icon" src="photos /file.png" alt="" aria-hidden="true"><span>Tiesverse Admin Panel</span></a>
+                <a class="work-sticker sticker-art" href="#detail-art" aria-label="Open A Bit of This, A Bit of That project"><img class="folder-icon" src="photos /file.png" alt="" aria-hidden="true"><span>A bit of this, a bit of that</span></a>
+            </div>
 
             <article class="work-detail detail-website" id="detail-website" aria-labelledby="website-title">
                 <nav class="work-controls" aria-label="Project navigation"><a href="#detail-panini" aria-label="Previous project: Pāṇini">←</a><a href="#work" aria-label="Close project details">×</a><a href="#detail-admin" aria-label="Next project: Ties Admin">→</a></nav>
@@ -136,6 +138,11 @@
                         <a href="https://www.linkedin.com/feed/update/urn:li:activity:7453490020457365504" target="_blank" rel="noopener noreferrer"><img src="assets/optimized/panini/12.jpg" alt="Drawing the Line" loading="lazy"></a>
                         <a href="https://www.linkedin.com/feed/update/urn:li:activity:7453860520457368945/" target="_blank" rel="noopener noreferrer"><img src="assets/optimized/panini/13.jpg" alt="Rethinking Article 142" loading="lazy"></a>
                     </div></section>
+                    <section class="detail-chapter detail-chapter-pdf">
+                        <h4>Adhyāya 3</h4>
+                        <p>Read the complete Pāṇini Adhyāya III issue.</p>
+                        <a class="detail-link" href="photos%20/Pa%CC%84n%CC%A3ini%20Adhya%CC%84ya%20III%28RGB%29.pdf" target="_blank" rel="noopener noreferrer">Open Adhyāya 3 PDF ↗</a>
+                    </section>
                 </div>
             </article>
 
